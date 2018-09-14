@@ -30,11 +30,11 @@ from sklearn.svm import SVC
 clf = SVC(C=10000., kernel = 'rbf')
 t0 = time()
 clf.fit(features_train, labels_train)
-print("training time with SVM's linear kernel", time() - t0)
+print("training time with SVM's rbf kernel", time() - t0)
 
 t1 = time()
 pred = clf.predict(features_test)
-print("prediction time with SVM's linear kernel", time() - t1)
+print("prediction time with SVM's rbf kernel", time() - t1)
 
 ans = [pred[10],pred[26],pred[50]]
 print ans
