@@ -23,9 +23,6 @@ features_train, features_test, labels_train, labels_test = preprocess()
 features_train = features_train[:len(features_train)/100]
 labels_train = labels_train[:len(labels_train)/100]
 
-#########################################################
-### your code goes here ###
-
 from sklearn.svm import SVC
 clf = SVC(C=10000., kernel = 'rbf')
 t0 = time()
@@ -41,9 +38,14 @@ print ans
 
 c_pred = sum(pred == 1)
 print "No of emails predicted to be in Chris", c_pred
+
+#Accuracy of the model
+
 from sklearn.metrics import accuracy_score
 acc = accuracy_score(pred, labels_test)
 print"accuracy:", acc
+
+
 #########################################################
 
 
