@@ -38,10 +38,15 @@ test_color = "b"
 ### plots it correctly. Don't forget to change the test_color above from "b" to
 ### "r" to differentiate training points from test points.
 
+from sklearn.linear_model import LinearRegression
 
+reg = LinearRegression()
 
-
-
+reg.fit(feature_train,target_train)
+print "Slope:", reg.coef_
+print "Intercept:", reg.intercept_
+print "Score Training:", reg.score(feature_train, target_train)
+print "Score Testing:", reg.score(feature_test, target_test)
 
 
 
